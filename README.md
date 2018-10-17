@@ -1,4 +1,4 @@
-image
+![vue-notification-bell](https://github.com/maryayi/vue-notification-bell/blob/master/public/images/bell-demo.png?raw=true)
 
 # vue-notification-bell
 
