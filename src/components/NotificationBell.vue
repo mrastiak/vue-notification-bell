@@ -118,9 +118,9 @@ export default {
     },
     decoratedCounter () {
       if (this.count <= this.upperLimit) {
-        return this.count
+        return Math.floor(this.count)
       } else {
-        return `+${this.upperLimit}`
+        return `+${Math.floor(this.upperLimit)}`
       }
     },
     resolvedIcon () {
