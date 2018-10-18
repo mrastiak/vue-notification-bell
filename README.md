@@ -39,14 +39,15 @@ export default {
 
 ## List of component props
 
-:warning: Warning: You have to v-bind parameters to all of these props.
-Don't pass parameters statically:
+:warning: Warning: You have to v-bind custom icon path with `require` function:
 
-`v-bind:propName="value"` :heavy_check_mark:
+`v-bind:icon="require(@/assets/path/to/icon.svg)"` :heavy_check_mark:
 
-`:propName="value"` :heavy_check_mark:
+`:icon="require(@/assets/path/to/icon.svg)"` :heavy_check_mark:
 
-`propName="value"` :x:
+`icon="@/assets/path/to/icon.svg"` :x:
+
+`icon="require(@/assets/path/to/icon.svg)"` :x:
 
 
 
@@ -57,8 +58,8 @@ Don't pass parameters statically:
 | `upperLimit`  | if `count` is bigger than this number notification shown as `+upperLimit` | 50 |
 | `counterLocation`  | position of counter box in component. can be one of: `upperRight`, `lowerRight`, `upperLeft`, `lowerLeft`, `center` | `upperRight` |
 | `icon` | custom notification icon. you have to pass your SVG icon location by `require` function  | `null` (showing the default bell icon) |
+| `iconColor` | color of the bell icon. **This property only works with default icon. if you are using custom `icon`, you have to handle color of the icon in your SVG file** | `black` |
 | `disabledIcon`  | If you want to show a different Icon when you have zero notification. you can use this prop. pass SVG icon location by `require` function. **this prop only works if you are using custom `icon` too** | `null` (showing the default bell icon) |
-| `mode` | Can be: `dark` for black bell icon or `light` for white bell icon. **this prop only works if you are _NOT_ using custom `icon`** | `dark` |
 | `counterStyle` | shape of counter box. can be one of: `roundRectangle`, `rectangle`, `round`  | `roundRectangle` |
 | `counterBackgroundColor` | background color of counter box  | `red`  |
 | `counterTextColor` | counter text color | `white` |
