@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <notification-bell class="bell"></notification-bell>
+    <notification-bell class="bell" />
   </div>
 </template>
 
