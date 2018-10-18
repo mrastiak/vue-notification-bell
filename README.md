@@ -1,8 +1,10 @@
 ![vue-notification-bell](https://github.com/maryayi/vue-notification-bell/blob/master/public/images/bell-demo.png?raw=true)
 
+[![npm version](https://badge.fury.io/js/vue-notification-bell.svg)](https://badge.fury.io/js/vue-notification-bell)
+
 # vue-notification-bell
 
-##### A Vue UI component for showing notifications
+A Vue UI component for showing notifications
 
 ## How To Install
 
