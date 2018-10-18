@@ -47,7 +47,7 @@ export default {
           }
         case 'lowerRight':
           return {
-            fontSize: `${this.size * 0.3}px`,
+            fontSize: `${this.size * 0.5}px`,
             bottom: 0,
             transform: 'translateY(40%)',
             left: `calc(100% - ${this.size * 0.45}px)`,
@@ -55,7 +55,7 @@ export default {
           }
         case 'upperLeft':
           return {
-            fontSize: `${this.size * 0.3}px`,
+            fontSize: `${this.size * 0.5}px`,
             top: 0,
             transform: 'translateY(-40%)',
             right: `calc(100% - ${this.size * 0.45}px)`,
@@ -63,7 +63,7 @@ export default {
           }
         case 'lowerLeft':
           return {
-            fontSize: `${this.size * 0.3}px`,
+            fontSize: `${this.size * 0.5}px`,
             bottom: 0,
             transform: 'translateY(40%)',
             right: `calc(100% - ${this.size * 0.45}px)`,
@@ -71,7 +71,7 @@ export default {
           }
         case 'center':
           return {
-            fontSize: `${this.size * 0.3}px`,
+            fontSize: `${this.size * 0.5}px`,
             top: '50%',
             left: `50%`,
             transform: 'translate(-50%, -50%)',
@@ -79,7 +79,7 @@ export default {
           }
         default:
           return {
-            fontSize: `${this.size * 0.3}px`,
+            fontSize: `${this.size * 0.5}px`,
             bottom: `calc(100% - ${this.size * 0.4}px)`,
             left: `calc(100% - ${this.size * 0.5}px)`,
             padding: `${this.size / 20}px ${this.size / 10}px`
