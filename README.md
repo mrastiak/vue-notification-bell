@@ -1,8 +1,14 @@
-![vue-notification-bell](https://github.com/maryayi/vue-notification-bell/blob/master/public/images/bell-demo.png?raw=true)
+<p align="center">
+  <a href="#">
+    <img src="https://github.com/maryayi/vue-notification-bell/blob/master/public/images/bell-demo.png?raw=true" alt="vue-notification-bell" />
+  </a>
+</p>
 
-[![npm version](https://badge.fury.io/js/vue-notification-bell.svg)](https://badge.fury.io/js/vue-notification-bell)
+<h1 align="center" >vue-notification-bell</h1>
 
-# vue-notification-bell
+<p align="center" class="badges" >
+  <a href="https://badge.fury.io/js/vue-notification-bell"><img src="https://badge.fury.io/js/vue-notification-bell.svg" alt="npm version" /></a>
+</p>
 
 A Vue UI component for showing notifications
 
@@ -55,7 +61,7 @@ export default {
 |----------|-------------|---------------|
 | `size`     | size of component in px  | 30 |
 | `count`    | number of notifications. (zero or below not shown)  |  0 |
-| `upperLimit`  | if `count` is bigger than this number notification shown as `+upperLimit` | 50 |
+| `upperLimit`  | if `count` is bigger than this number notification shown as `+upperLimit` | 99 |
 | `counterLocation`  | position of counter box in component. can be one of: `upperRight`, `lowerRight`, `upperLeft`, `lowerLeft`, `center` | `upperRight` |
 | `icon` | custom notification icon. you have to pass your SVG icon location by `require` function  | `null` (showing the default bell icon) |
 | `iconColor` | color of the bell icon. **This property only works with default icon. if you are using custom `icon`, you have to handle color of the icon in your SVG file** | `black` |

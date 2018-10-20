@@ -80,8 +80,9 @@ export default {
         default:
           return {
             fontSize: `${this.size * 0.5}px`,
-            bottom: `calc(100% - ${this.size * 0.4}px)`,
-            left: `calc(100% - ${this.size * 0.5}px)`,
+            left: `calc(100% - ${this.size * 0.45}px)`,
+            top: 0,
+            transform: 'translateY(-40%)',
             padding: `${this.size / 20}px ${this.size / 10}px`
           }
       }
@@ -152,7 +153,7 @@ export default {
     },
     upperLimit: {
       type: Number,
-      default: 50
+      default: 99
     },
     size: {
       type: Number,
