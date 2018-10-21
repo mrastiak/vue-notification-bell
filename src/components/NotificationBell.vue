@@ -1,5 +1,5 @@
 <template>
-  <div id="notification-bell">
+  <div id="notificationBell">
     <div class="notification"
          :style="notificationStyle"
     >
@@ -21,19 +21,19 @@
            :style="notificationCounterStyle"
            v-if="count > 0"
       >
-        {{ this.decoratedCounter }}
+        <span v-if="!animated">{{ decoratedCounter }}</span>
+        <div class="odometer-wrapper" v-else><div v-if="count > upperLimit">+</div><vue-odometer class="iOdometer" :value="decoratedCounter" /></div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import VueOdometer from 'vue-odometer'
+import 'odometer/themes/odometer-theme-default.css'
 
 export default {
   name: 'NotificationBell',
-  methods: {
-
-  },
   computed: {
     notificationCounterPosition () {
       switch (this.counterLocation) {
@@ -146,6 +146,9 @@ export default {
       }
     }
   },
+  components: {
+    VueOdometer
+  },
   props: {
     count: {
       type: Number,
@@ -186,11 +189,16 @@ export default {
     iconColor: {
       type: String,
       default: '#000000'
+    },
+    animated: {
+      type: Boolean,
+      default: true
     }
   }
 }
 </script>
-<style lang="sass" scoped>
+<style lang="sass">
+#notificationBell
   .notification
     position: relative
     display: grid
@@ -198,6 +206,12 @@ export default {
       width: fit-content
       position: absolute
       text-align: center
+      .odometer-wrapper
+        display: grid
+        grid-auto-flow: column
+        .odometer-inside
+          display: grid
+          grid-auto-flow: column
     .notification-icon
       text-align: center
       width: 100%

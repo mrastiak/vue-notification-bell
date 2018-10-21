@@ -11,7 +11,9 @@
     "prepare": "npm run build-bundle"
   },
   "dependencies": {
-    "vue": "^2.5.17"
+    "odometer": "^0.4.8",
+    "vue": "^2.5.17",
+    "vue-odometer": "^1.0.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.0.5",
