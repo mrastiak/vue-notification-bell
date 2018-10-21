@@ -50,6 +50,9 @@
         <input type="checkbox" v-model="animated" id="animated">
         <label for="animated">Animated</label>
       </div>
+      <div class="docs">
+        <a href="https://github.com/Carrene/vue-notification-bell" target="_blank">Docs</a>
+      </div>
     </div>
     <notification-bell class="bell"
                        :size="parseInt(size)"
@@ -117,17 +120,22 @@ export default {
         padding: 20px
         border-right: 1px solid black
         display: grid
-        align-content: start
         grid-row-gap: 20px
+        .input-container
+          display: grid
+          grid-template-columns: auto 1fr
+          grid-column-gap: 10px
+          align-items: center
+          label
+            font-size: 14px
+        .docs
+          text-align: center
+          align-self: end
+          a
+            color: black
+            font-size: 20px
       .bell
         padding: 20px
         justify-self: center
         align-self: center
-      .input-container
-        display: grid
-        grid-template-columns: auto 1fr
-        grid-column-gap: 10px
-        align-items: center
-        label
-          font-size: 14px
 </style>
