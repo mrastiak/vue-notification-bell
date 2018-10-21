@@ -46,6 +46,10 @@
         <label for="iconColor">Icon Color</label>
         <input type="color" id="iconColor" v-model="iconColor">
       </div>
+      <div class="input-container">
+        <input type="checkbox" v-model="animated" id="animated">
+        <label for="animated">Animated</label>
+      </div>
     </div>
     <notification-bell class="bell"
                        :size="parseInt(size)"
@@ -56,6 +60,7 @@
                        :counterBackgroundColor="counterBackgroundColor"
                        :counterTextColor="counterTextColor"
                        :iconColor="iconColor"
+                       :animated="animated"
     />
     <footer>
       <p>Created by <a href="https://twitter.com/maryayi" target="_blank">@maryayi</a> and <a href="https://github.com/mrastiak" target="_blank">@mrastiak</a></p>
@@ -77,7 +82,8 @@ export default {
       counterStyle: 'roundRectangle',
       counterBackgroundColor: '#FF0000',
       counterTextColor: '#FFFFFF',
-      iconColor: '#000000'
+      iconColor: '#000000',
+      animated: false
     }
   },
   components: {
@@ -124,6 +130,4 @@ export default {
         align-items: center
         label
           font-size: 14px
-
-
 </style>
