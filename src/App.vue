@@ -9,12 +9,28 @@
         <input type="range" min="30" max="500" v-model="size" id="size" class="slider">
       </div>
       <div class="input-container">
+        <input type="checkbox" v-model="customLocation" id="customLocation">
+        <label for="customLocation">Custom Location</label>
+      </div>
+      <div class="input-container" v-if="customLocation">
+        <label for="top">Top</label>
+        <input type="text" v-model="top" id="top">
+      </div>
+      <div class="input-container" v-if="customLocation">
+        <label for="left">Left</label>
+        <input type="text" v-model="left" id="left">
+      </div>
+      <div class="input-container" v-if="!customLocation">
         <label for="counterLocation">Counter Location</label>
         <select name="counterLocation" id="counterLocation" v-model="counterLocation">
           <option value="upperRight">Upper Right</option>
-          <option value="upperLeft">Upper Left</option>
+          <option value="right">Right</option>
           <option value="lowerRight">Lower Right</option>
+          <option value="bottom">Bottom</option>
           <option value="lowerLeft">Lower Left</option>
+          <option value="left">Left</option>
+          <option value="upperLeft">Upper Left</option>
+          <option value="top">Top</option>
           <option value="center">Center</option>
         </select>
       </div>
@@ -64,6 +80,8 @@
                        :counterTextColor="counterTextColor"
                        :iconColor="iconColor"
                        :animated="animated"
+                       :top="top"
+                       :left="left"
     />
     <footer>
       <p>Created by <a href="https://twitter.com/maryayi" target="_blank">@maryayi</a> and <a href="https://github.com/mrastiak" target="_blank">@mrastiak</a></p>
@@ -79,7 +97,10 @@ export default {
   data () {
     return {
       size: 100,
+      customLocation: false,
       counterLocation: 'upperRight',
+      top: null,
+      left: null,
       count: 2,
       upperLimit: 50,
       counterStyle: 'roundRectangle',
@@ -87,6 +108,13 @@ export default {
       counterTextColor: '#FFFFFF',
       iconColor: '#000000',
       animated: false
+    }
+  },
+  watch: {
+    'customLocation' (newValue) {
+      if (!newValue) {
+        this.top = this.left = null
+      }
     }
   },
   components: {

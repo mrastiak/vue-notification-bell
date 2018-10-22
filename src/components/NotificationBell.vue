@@ -3,7 +3,13 @@
     <div class="notification"
          :style="notificationStyle"
     >
-      <svg xmlns="http://www.w3.org/2000/svg" :width="size" :height="size" viewBox="0 0 20 20" v-if="!icon" :fill="iconColor">
+      <svg xmlns="http://www.w3.org/2000/svg"
+           :width="size"
+           :height="size"
+           viewBox="0 0 20 20"
+           v-if="!icon"
+           :fill="iconColor"
+      >
         <title>
           bell
         </title>
@@ -22,7 +28,10 @@
            v-if="count > 0"
       >
         <span v-if="!animated">{{ decoratedCounter }}</span>
-        <div class="odometer-wrapper" v-else><div v-if="count > upperLimit">+</div><vue-odometer class="iOdometer" :value="decoratedCounter" /></div>
+        <div class="odometer-wrapper" v-else>
+          <div v-if="count > upperLimit">+</div>
+          <vue-odometer class="iOdometer" :value="decoratedCounter" />
+        </div>
       </div>
     </div>
   </div>
@@ -35,57 +44,69 @@ import 'odometer/themes/odometer-theme-default.css'
 export default {
   name: 'NotificationBell',
   computed: {
-    notificationCounterPosition () {
+    preDefinedNotificationCounterLocation () {
       switch (this.counterLocation) {
         case 'upperRight':
           return {
-            fontSize: `${this.size * 0.5}px`,
-            left: `calc(100% - ${this.size * 0.45}px)`,
             top: 0,
-            transform: 'translateY(-40%)',
-            padding: `${this.size / 20}px ${this.size / 10}px`
+            left: `calc(100% - ${this.size * 0.45}px)`,
+            transform: 'translateY(-40%)'
+          }
+        case 'right':
+          return {
+            top: '50%',
+            left: `calc(100% - ${this.size * 0.45}px)`,
+            transform: 'translateY(-50%)'
           }
         case 'lowerRight':
           return {
-            fontSize: `${this.size * 0.5}px`,
             bottom: 0,
-            transform: 'translateY(40%)',
             left: `calc(100% - ${this.size * 0.45}px)`,
-            padding: `${this.size / 20}px ${this.size / 10}px`
+            transform: 'translateY(40%)'
           }
-        case 'upperLeft':
+        case 'bottom':
           return {
-            fontSize: `${this.size * 0.5}px`,
-            top: 0,
-            transform: 'translateY(-40%)',
-            right: `calc(100% - ${this.size * 0.45}px)`,
-            padding: `${this.size / 20}px ${this.size / 10}px`
+            bottom: 0,
+            left: `50%`,
+            transform: 'translate(-50%, 40%)'
           }
         case 'lowerLeft':
           return {
-            fontSize: `${this.size * 0.5}px`,
             bottom: 0,
-            transform: 'translateY(40%)',
             right: `calc(100% - ${this.size * 0.45}px)`,
-            padding: `${this.size / 20}px ${this.size / 10}px`
+            transform: 'translateY(40%)'
+          }
+        case 'left':
+          return {
+            top: '50%',
+            right: `calc(100% - ${this.size * 0.45}px)`,
+            transform: 'translateY(-50%)'
+          }
+        case 'upperLeft':
+          return {
+            top: 0,
+            right: `calc(100% - ${this.size * 0.45}px)`,
+            transform: 'translateY(-40%)'
+          }
+        case 'top':
+          return {
+            left: `50%`,
+            top: 0,
+            transform: 'translate(-50%, -40%)',
           }
         case 'center':
           return {
-            fontSize: `${this.size * 0.5}px`,
             top: '50%',
             left: `50%`,
-            transform: 'translate(-50%, -50%)',
-            padding: `${this.size / 20}px ${this.size / 10}px`
+            transform: 'translate(-50%, -50%)'
           }
         default:
           return {
-            fontSize: `${this.size * 0.5}px`,
-            left: `calc(100% - ${this.size * 0.45}px)`,
             top: 0,
-            transform: 'translateY(-40%)',
-            padding: `${this.size / 20}px ${this.size / 10}px`
+            left: `calc(100% - ${this.size * 0.45}px)`,
+            transform: 'translateY(-40%)'
           }
-      }
+        }
     },
     notificationStyle () {
       return {
@@ -95,8 +116,11 @@ export default {
     },
     notificationCounterStyle () {
       return Object.assign(
-        {},
-        this.notificationCounterPosition,
+        {
+          fontSize: `${this.size * 0.5}px`,
+          padding: `${this.size / 20}px ${this.size / 10}px`
+        },
+        this.notificationCounterLocation,
         this.notificationCounterShape,
         this.notificationCounterColor
       )
@@ -144,6 +168,16 @@ export default {
         }
         return this.icon
       }
+    },
+    notificationCounterLocation () {
+      if (this.top || this.left) {
+        return {
+          top: this.top || 0,
+          left: this.left || 0
+        }
+      } else {
+        return this.preDefinedNotificationCounterLocation
+      }
     }
   },
   components: {
@@ -164,7 +198,15 @@ export default {
     },
     counterLocation: {
       type: String,
-      default: 'upperRight' // Can be: 'upperRight', 'lowerRight', 'upperLeft', 'lowerLeft', 'center'
+      default: 'upperRight' // Can be: 'upperRight', 'right', 'lowerRight', 'bottom', 'lowerLeft', 'left', 'upperLeft', 'top', 'center'
+    },
+    top: {
+      type: String,
+      default: null
+    },
+    left: {
+      type: String,
+      default: null
     },
     icon: {
       type: String,
