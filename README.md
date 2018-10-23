@@ -62,7 +62,9 @@ export default {
 | `size`     | size of component in px  | 30 |
 | `count`    | number of notifications. (zero or below not shown)  |  0 |
 | `upperLimit`  | if `count` is bigger than this number notification shown as `+upperLimit` | 99 |
-| `counterLocation`  | position of counter box in component. can be one of: `upperRight`, `lowerRight`, `upperLeft`, `lowerLeft`, `center` | `upperRight` |
+| `counterLocation`  | position of counter box in component. can be one of: `upperRight`, `lowerRight`, `upperLeft`, `lowerLeft`, `top`, `left`, `bottom`, `right` and `center`. **If you set `top` or `left` prop, this prop will be disabled** | `upperRight` |
+| `top`  | If you want to set a custom location for counterBox, you can set top distance by this prop. You have to pass value with dimension (e.g. `10px` or `20%`). If you set this prop the `counterLocation` prop will be disabled | `null` (Location is calculated by `counterLocation`) |
+| `left`  | If you want to set a custom location for counterBox, you can set left distance by this prop. You have to pass value with dimension (e.g. `10px` or `20%`). If you set this prop the `counterLocation` prop will be disabled | `null` (Location is calculated by `counterLocation`) |
 | `icon` | custom notification icon. you have to pass your SVG icon location by `require` function  | `null` (showing the default bell icon) |
 | `iconColor` | color of the bell icon. **This property only works with default icon. if you are using custom `icon`, you have to handle color of the icon in your SVG file** | `black` |
 | `disabledIcon`  | If you want to show a different Icon when you have zero notification. you can use this prop. pass SVG icon location by `require` function. **this prop only works if you are using custom `icon` too** | `null` (showing the default bell icon) |
