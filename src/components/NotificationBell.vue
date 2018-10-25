@@ -198,7 +198,20 @@ export default {
     },
     counterLocation: {
       type: String,
-      default: 'upperRight' // Can be: 'upperRight', 'right', 'lowerRight', 'bottom', 'lowerLeft', 'left', 'upperLeft', 'top', 'center'
+      default: 'upperRight',
+      validator(counterLocation) {
+        return [
+          'upperRight',
+          'right',
+          'lowerRight',
+          'bottom',
+          'lowerLeft',
+          'left',
+          'upperLeft',
+          'top',
+          'center'
+        ].includes(counterLocation)
+      }
     },
     top: {
       type: String,
@@ -218,7 +231,10 @@ export default {
     },
     counterStyle: {
       type: String,
-      default: 'roundRectangle' // Can be: 'roundRectangle', 'rectangle', 'round'
+      default: 'roundRectangle',
+      validator(counterStyle) {
+        return ['roundRectangle', 'rectangle', 'round'].includes(counterStyle)
+      }
     },
     counterBackgroundColor: {
       type: String,
