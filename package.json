@@ -2,7 +2,7 @@
   "name": "vue-notification-bell",
   "description": "A Vue.js UI component for showing notifications",
   "main": "./dist/NotificationBell.common.js",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build --dest docs",
