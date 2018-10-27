@@ -2,6 +2,7 @@
 const fs = require('fs')
 
 module.exports = {
+  baseUrl: './',
   lintOnSave: false,
   chainWebpack: (config) => {
     // remove the old loader

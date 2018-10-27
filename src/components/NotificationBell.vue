@@ -156,7 +156,11 @@ export default {
       if (this.count <= this.upperLimit) {
         return Math.floor(this.count)
       } else {
-        return `+${Math.floor(this.upperLimit)}`
+        if (this.prefixPlus) {
+          return `+${Math.floor(this.upperLimit)}`
+        } else {
+          return `${Math.floor(this.upperLimit)}+`
+        }
       }
     },
     resolvedIcon () {
@@ -251,6 +255,10 @@ export default {
     animated: {
       type: Boolean,
       default: true
+    },
+    prefixPlus: {
+      type: Boolean,
+      default: false
     }
   }
 }
