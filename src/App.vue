@@ -43,6 +43,10 @@
         <input type="number" min="1" id="upperLimit" v-model="upperLimit">
       </div>
       <div class="input-container">
+        <label for="prefixPlus">Prefix Plus?</label>
+        <input type="checkbox" id="prefixPlus" v-model="prefixPlus">
+      </div>
+      <div class="input-container">
         <label for="counterStyle">Counter Style</label>
         <select name="counterStyle" id="counterStyle" v-model="counterStyle">
           <option value="roundRectangle">Round Rectangle</option>
@@ -82,6 +86,7 @@
                        :animated="animated"
                        :top="top"
                        :left="left"
+                       :prefixPlus="prefixPlus"
     />
     <footer>
       <p>Created by <a href="https://twitter.com/maryayi" target="_blank">@maryayi</a> and <a href="https://github.com/mrastiak" target="_blank">@mrastiak</a></p>
@@ -107,7 +112,8 @@ export default {
       counterBackgroundColor: '#FF0000',
       counterTextColor: '#FFFFFF',
       iconColor: '#000000',
-      animated: false
+      animated: false,
+      prefixPlus: false
     }
   },
   watch: {

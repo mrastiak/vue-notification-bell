@@ -72,6 +72,7 @@ export default {
 | `counterBackgroundColor` | background color of counter box  | `red`  |
 | `counterTextColor` | counter text color | `white` |
 | `animated` | if true, counter increase/decrease by animation  | `true` |
+| `prefixPlus` | if true, upper limit plus sign is shown as a **prefix**, otherwise it is shown as a postfix   | `false` |
 
 ### Compiles and hot-reloads for development
 ```
