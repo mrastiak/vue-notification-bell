@@ -209,14 +209,6 @@ export default {
     VueOdometer
   },
   props: {
-    counterPadding: {
-      type: String,
-      default: null
-    },
-    fontSize: {
-      type: String,
-      default: null
-    },
     count: {
       type: Number,
       default: 0
@@ -288,6 +280,14 @@ export default {
     prefixPlus: {
       type: Boolean,
       default: false
+    },
+    counterPadding: {
+      type: String,
+      default: null
+    },
+    fontSize: {
+      type: String,
+      default: null
     }
   }
 }
