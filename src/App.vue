@@ -8,17 +8,36 @@
         <label for="size">Size</label>
         <input type="range" min="30" max="500" v-model="size" id="size" class="slider">
       </div>
+
+      <div class="input-container">
+        <input type="checkbox" v-model="customFontSize" id="customFontSize">
+        <label for="customFontSize">Custom Font Size</label>
+      </div>
+      <div class="input-container" v-if="customFontSize">
+        <label for="fontSize">Font Size</label>
+        <input type="text" placeholder="e.g: 20px" v-model="fontSize" id="fontSize">
+      </div>
+
+      <div class="input-container">
+        <input type="checkbox" v-model="customCounterPadding" id="customCounterPadding">
+        <label for="customCounterPadding">Custom Counter Padding</label>
+      </div>
+      <div class="input-container" v-if="customCounterPadding">
+        <label for="padding">Padding</label>
+        <input type="text" placeholder="e.g: 20px" v-model="counterPadding" id="padding">
+      </div>
+
       <div class="input-container">
         <input type="checkbox" v-model="customLocation" id="customLocation">
         <label for="customLocation">Custom Location</label>
       </div>
       <div class="input-container" v-if="customLocation">
         <label for="top">Top</label>
-        <input type="text" v-model="top" id="top">
+        <input type="text" placeholder="e.g: 20px" v-model="top" id="top">
       </div>
       <div class="input-container" v-if="customLocation">
         <label for="left">Left</label>
-        <input type="text" v-model="left" id="left">
+        <input type="text" placeholder="e.g: 20px" v-model="left" id="left">
       </div>
       <div class="input-container" v-if="!customLocation">
         <label for="counterLocation">Counter Location</label>
@@ -87,6 +106,8 @@
                        :top="top"
                        :left="left"
                        :prefixPlus="prefixPlus"
+                       :fontSize="fontSize"
+                       :counterPadding="counterPadding"
     />
     <footer>
       <p>Created by <a href="https://twitter.com/maryayi" target="_blank">@maryayi</a> and <a href="https://github.com/mrastiak" target="_blank">@mrastiak</a></p>
@@ -113,13 +134,27 @@ export default {
       counterTextColor: '#FFFFFF',
       iconColor: '#000000',
       animated: false,
-      prefixPlus: false
+      prefixPlus: false,
+      customFontSize: false,
+      fontSize: null,
+      customCounterPadding: false,
+      counterPadding: null
     }
   },
   watch: {
     'customLocation' (newValue) {
       if (!newValue) {
         this.top = this.left = null
+      }
+    },
+    'customFontSize' (newValue) {
+      if (!newValue) {
+        this.fontSize = null
+      }
+    },
+    'customCounterPadding' (newValue) {
+      if (!newValue) {
+        this.counterPadding = null
       }
     }
   },

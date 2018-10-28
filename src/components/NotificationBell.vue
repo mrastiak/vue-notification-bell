@@ -116,13 +116,12 @@ export default {
     },
     notificationCounterStyle () {
       return Object.assign(
-        {
-          fontSize: `${this.size * 0.5}px`,
-          padding: `${this.size / 20}px ${this.size / 10}px`
-        },
+        {},
         this.notificationCounterLocation,
         this.notificationCounterShape,
-        this.notificationCounterColor
+        this.notificationCounterColor,
+        this.notificationCounterFontSize,
+        this.notificationCounterPadding
       )
     },
     notificationCounterShape () {
@@ -182,12 +181,42 @@ export default {
       } else {
         return this.preDefinedNotificationCounterLocation
       }
+    },
+    notificationCounterFontSize () {
+      if (this.fontSize) {
+        return {
+          fontSize: this.fontSize
+        }
+      } else {
+        return {
+          fontSize: `${this.size * 0.5}px`
+        }
+      }
+    },
+    notificationCounterPadding () {
+      if (this.counterPadding) {
+        return {
+          padding: this.counterPadding
+        }
+      } else {
+        return {
+          padding: `${this.size / 20}px ${this.size / 10}px`
+        }
+      }
     }
   },
   components: {
     VueOdometer
   },
   props: {
+    counterPadding: {
+      type: String,
+      default: null
+    },
+    fontSize: {
+      type: String,
+      default: null
+    },
     count: {
       type: Number,
       default: 0
