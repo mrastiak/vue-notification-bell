@@ -6,7 +6,7 @@
     <div class="controls">
       <div class="input-container">
         <label for="size">Size</label>
-        <input type="range" min="30" max="500" v-model="size" id="size" class="slider">
+        <input type="range" min="30" max="500" v-model.number="size" id="size" class="slider">
       </div>
 
       <div class="input-container">
@@ -55,11 +55,11 @@
       </div>
       <div class="input-container">
         <label for="notificationCount">Notification Count</label>
-        <input type="number" v-model="count" min="1" id="notificationCount">
+        <input type="number" v-model.number="count" min="1" id="notificationCount">
       </div>
       <div class="input-container">
         <label for="upperLimit">Notifications Upper Limit</label>
-        <input type="number" min="1" id="upperLimit" v-model="upperLimit">
+        <input type="number" min="1" id="upperLimit" v-model.number="upperLimit">
       </div>
       <div class="input-container">
         <label for="prefixPlus">Prefix Plus?</label>
@@ -94,9 +94,9 @@
       </div>
     </div>
     <notification-bell class="bell"
-                       :size="parseInt(size)"
-                       :count="parseInt(count)"
-                       :upperLimit="parseInt(upperLimit)"
+                       :size="size"
+                       :count="count"
+                       :upperLimit="upperLimit"
                        :counter-location="counterLocation"
                        :counterStyle="counterStyle"
                        :counterBackgroundColor="counterBackgroundColor"
@@ -110,9 +110,9 @@
                        :counterPadding="counterPadding"
     />
     <source-code
-            :size="parseInt(size)"
-            :count="parseInt(count)"
-            :upperLimit="parseInt(upperLimit)"
+            :size="size"
+            :count="count"
+            :upperLimit="upperLimit"
             :counter-location="counterLocation"
             :counterStyle="counterStyle"
             :counterBackgroundColor="counterBackgroundColor"
