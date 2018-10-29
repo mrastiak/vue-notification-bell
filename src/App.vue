@@ -126,7 +126,11 @@
             :counterPadding="counterPadding"
     />
     <footer>
-      <p>Created by <a href="https://twitter.com/maryayi" target="_blank">@maryayi</a> and <a href="https://github.com/mrastiak" target="_blank">@mrastiak</a></p>
+      <p>
+        Created by <a href="https://twitter.com/maryayi" target="_blank">@maryayi</a>,
+        <a href="https://github.com/mrastiak" target="_blank">@mrastiak</a> and
+        <a href="https://github.com/eghrarish" target="_blank">@eghrarish</a>
+      </p>
     </footer>
   </div>
 </template>
