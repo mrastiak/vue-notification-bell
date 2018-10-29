@@ -106,7 +106,7 @@ export default {
             left: `calc(100% - ${this.size * 0.45}px)`,
             transform: 'translateY(-40%)'
           }
-        }
+      }
     },
     notificationStyle () {
       return {
