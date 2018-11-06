@@ -73,7 +73,7 @@ export default {
 | `counterStyle` | shape of counter box. can be one of: `roundRectangle`, `rectangle`, `round`  | `roundRectangle` |
 | `counterBackgroundColor` | background color of counter box  | `red`  |
 | `counterTextColor` | counter text color | `white` |
-| `animated` | if true, counter increase/decrease by animation  | `true` |
+| `animated` | if true, counter increase/decrease by animation  | `false` |
 | `prefixPlus` | if true, upper limit plus sign is shown as a **prefix**, otherwise it is shown as a postfix   | `false` |
 
 ### Compiles and hot-reloads for development

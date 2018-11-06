@@ -275,7 +275,7 @@ export default {
     },
     animated: {
       type: Boolean,
-      default: true
+      default: false
     },
     prefixPlus: {
       type: Boolean,
@@ -292,7 +292,7 @@ export default {
   }
 }
 </script>
-<style lang="sass">
+<style lang="sass" scoped>
 #notificationBell
   .notification
     position: relative
