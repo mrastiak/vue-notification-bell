@@ -20,7 +20,6 @@
       </svg>
       <img :src="resolvedIcon"
            class="notification-icon"
-           style="text-align: center; width: 100%; height: 100%"
            v-else
       />
 
@@ -30,8 +29,9 @@
       >
         <span v-if="!animated">{{ decoratedCounter }}</span>
         <div class="odometer-wrapper" v-else>
-          <div v-if="count > upperLimit">+</div>
+          <div v-if="count > upperLimit && prefixPlus">+</div>
           <vue-odometer class="iOdometer" :value="decoratedCounter" />
+          <div v-if="count > upperLimit && !prefixPlus">+</div>
         </div>
       </div>
     </div>
@@ -301,6 +301,11 @@ export default {
 </script>
 <style lang="sass">
 #notificationBell
+  .notification
+    .notification-icon
+      text-align: center
+      width: 100%
+      height: 100%
   .odometer-wrapper
     display: grid
     grid-auto-flow: column
