@@ -32,6 +32,11 @@ module.exports = {
     }
   },
   css: {
-    extract: false
+    extract: false,
+    loaderOptions: {
+      sass: {
+        filename: '[name].[ext]'
+      }
+    }
   }
 }
