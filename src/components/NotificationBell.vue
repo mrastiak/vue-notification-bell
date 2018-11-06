@@ -20,6 +20,7 @@
       </svg>
       <img :src="resolvedIcon"
            class="notification-icon"
+           style="text-align: center; width: 100%; height: 100%"
            v-else
       />
 
@@ -110,13 +111,19 @@ export default {
     },
     notificationStyle () {
       return {
+        display: 'grid',
+        position: 'relative',
         width: `${this.size}px`,
         height: `${this.size}px`
       }
     },
     notificationCounterStyle () {
       return Object.assign(
-        {},
+        {
+          width: 'fit-content',
+          position: 'absolute',
+          textAlign: 'center'
+        },
         this.notificationCounterLocation,
         this.notificationCounterShape,
         this.notificationCounterColor,
@@ -292,24 +299,13 @@ export default {
   }
 }
 </script>
-<style lang="sass" scoped>
+<style lang="sass">
 #notificationBell
-  .notification
-    position: relative
+  .odometer-wrapper
     display: grid
-    .notification-counter
-      width: fit-content
-      position: absolute
-      text-align: center
-      .odometer-wrapper
-        display: grid
-        grid-auto-flow: column
-        .odometer-inside
-          display: grid
-          grid-auto-flow: column
-    .notification-icon
-      text-align: center
-      width: 100%
-      height: 100%
+    grid-auto-flow: column
+    .odometer-inside
+      display: grid
+      grid-auto-flow: column
 
 </style>
