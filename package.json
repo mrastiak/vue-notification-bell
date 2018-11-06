@@ -9,7 +9,7 @@
     "*.json",
     "*.js"
   ],
-  "version": "0.8.3",
+  "version": "0.8.4",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build --dest docs",
