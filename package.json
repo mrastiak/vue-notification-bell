@@ -42,6 +42,20 @@
   "bugs": {
     "url": "https://github.com/maryayi/vue-notification-bell/issues"
   },
-  "license": "MIT",
-  "author": "Mahdi Aryayi <mahdiaryayi@gmail.com>"
+  "author": "Mahdi Aryayi <mahdiaryayi@gmail.com>",
+  "contributors": [
+    {
+      "name": "Mahdi Aryayi",
+      "email": "mahdiaryayi@gmail.com"
+    },
+    {
+      "name": "Armin Ayari",
+      "email": "armin.ayari@gmail.com"
+    },
+    {
+      "name": "Shirin Eghrari",
+      "email": "eghrarish@gmail.com"
+    }
+  ],
+  "license": "MIT"
 }
