@@ -1,6 +1,3 @@
-
-const fs = require('fs')
-
 module.exports = {
   baseUrl: './',
   lintOnSave: false,
