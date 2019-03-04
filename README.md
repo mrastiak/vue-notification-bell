@@ -10,7 +10,7 @@
   <a href="https://badge.fury.io/js/vue-notification-bell"><img src="https://badge.fury.io/js/vue-notification-bell.svg" alt="npm version" /></a>
 </p>
 
-A Vue UI component for showing notifications. [Demo Page](https://carrene.github.io/vue-notification-bell/)
+A Vue UI component for showing notifications. [Demo Page](https://mrastiak.github.io/vue-notification-bell/)
 
 ## How To Install
 
