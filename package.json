@@ -19,17 +19,17 @@
   },
   "dependencies": {
     "odometer": "^0.4.8",
-    "vue": "^2.5.21",
+    "vue": "^2.6.10",
     "vue-odometer": "^1.0.2"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.2.0",
-    "@vue/cli-plugin-eslint": "^3.2.1",
-    "@vue/cli-service": "^3.2.0",
+    "@vue/cli-plugin-babel": "^3.8.0",
+    "@vue/cli-plugin-eslint": "^3.8.0",
+    "@vue/cli-service": "^3.8.3",
     "@vue/eslint-config-standard": "^4.0.0",
-    "node-sass": "^4.11.0",
+    "node-sass": "^4.12.0",
     "sass-loader": "^7.1.0",
-    "vue-template-compiler": "^2.5.21"
+    "vue-template-compiler": "^2.6.10"
   },
   "keywords": [
     "vue",
