@@ -27,10 +27,10 @@
            :style="notificationCounterStyle"
            v-if="count > 0"
       >
-        <span v-if="!animated">{{ decoratedCounter }}</span>
-        <div class="odometer-wrapper" v-else>
+        <div class="counter-wrapper">
           <div v-if="count > upperLimit && prefixPlus">+</div>
-          <vue-odometer class="iOdometer" :value="decoratedCounter" />
+          <span v-if="!animated">{{ computedCounter }}</span>
+          <vue-odometer v-else class="iOdometer" :value="computedCounter" />
           <div v-if="count > upperLimit && !prefixPlus">+</div>
         </div>
       </div>
@@ -158,16 +158,8 @@ export default {
         color: this.counterTextColor
       }
     },
-    decoratedCounter () {
-      if (this.count <= this.upperLimit) {
-        return Math.floor(this.count)
-      } else {
-        if (this.prefixPlus) {
-          return `+${Math.floor(this.upperLimit)}`
-        } else {
-          return `${Math.floor(this.upperLimit)}+`
-        }
-      }
+    computedCounter () {
+      return this.count <= this.upperLimit ? Math.floor(this.count) : Math.floor(this.upperLimit)
     },
     resolvedIcon () {
       if (this.icon) {
@@ -306,7 +298,7 @@ export default {
       text-align: center
       width: 100%
       height: 100%
-  .odometer-wrapper
+  .counter-wrapper
     display: grid
     grid-auto-flow: column
     .odometer-inside
