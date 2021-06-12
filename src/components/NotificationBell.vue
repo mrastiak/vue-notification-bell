@@ -1,5 +1,5 @@
 <template>
-  <div id="notificationBell">
+  <div class="notificationBell">
     <div class="notification"
          :style="notificationStyle"
     >
@@ -292,7 +292,7 @@ export default {
 }
 </script>
 <style lang="sass">
-#notificationBell
+.notificationBell
   .notification
     .notification-icon
       text-align: center
