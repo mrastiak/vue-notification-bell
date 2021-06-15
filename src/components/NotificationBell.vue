@@ -1,36 +1,45 @@
 <template>
   <div class="notificationBell">
-    <div class="notification"
-         :style="notificationStyle"
+    <div
+      class="notification"
+      :style="notificationStyle"
     >
-      <svg xmlns="http://www.w3.org/2000/svg"
-           :width="size"
-           :height="size"
-           viewBox="0 0 20 20"
-           v-if="!icon"
-           :fill="iconColor"
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        :width="size"
+        :height="size"
+        viewBox="0 0 20 20"
+        v-if="!icon"
+        :fill="iconColor"
       >
         <title>
           bell
         </title>
-        <path d="M16 7a5.38 5.38 0 0 0-4.46-4.85C11.6 1.46 11.53 0 10 0S8.4 1.46 8.46 2.15A5.38 5.38 0 0 0 4 7v6l-2 2v1h16v-1l-2-2zm-6 13a3 3 0 0 0 3-3H7a3 3 0 0 0 3 3z"
-              width="100%"
-              height="100%"
+        <path
+          d="M16 7a5.38 5.38 0 0 0-4.46-4.85C11.6 1.46 11.53 0 10 0S8.4 1.46 8.46 2.15A5.38 5.38 0 0 0 4 7v6l-2 2v1h16v-1l-2-2zm-6 13a3 3 0 0 0 3-3H7a3 3 0 0 0 3 3z"
+          width="100%"
+          height="100%"
         />
       </svg>
-      <img :src="resolvedIcon"
-           class="notification-icon"
-           v-else
+      <img
+        :src="resolvedIcon"
+        class="notification-icon"
+        v-else
       />
 
-      <div class="notification-counter"
-           :style="notificationCounterStyle"
-           v-if="count > 0"
+      <div
+        class="notification-counter"
+        :style="notificationCounterStyle"
+        v-if="count > 0"
       >
         <div class="counter-wrapper">
           <div v-if="count > upperLimit && prefixPlus">+</div>
           <span v-if="!animated">{{ computedCounter }}</span>
-          <vue-odometer v-else class="iOdometer" :value="computedCounter" />
+          <vue-odometer
+            v-else
+            class="iOdometer"
+            :value="computedCounter"
+          />
           <div v-if="count > upperLimit && !prefixPlus">+</div>
         </div>
       </div>
@@ -212,6 +221,10 @@ export default {
       type: Number,
       default: 0
     },
+    ding: {
+      type: Boolean,
+      default: false,
+    },
     upperLimit: {
       type: Number,
       default: 99
@@ -223,7 +236,7 @@ export default {
     counterLocation: {
       type: String,
       default: 'upperRight',
-      validator(counterLocation) {
+      validator (counterLocation) {
         return [
           'upperRight',
           'right',
@@ -256,7 +269,7 @@ export default {
     counterStyle: {
       type: String,
       default: 'roundRectangle',
-      validator(counterStyle) {
+      validator (counterStyle) {
         return ['roundRectangle', 'rectangle', 'round'].includes(counterStyle)
       }
     },
@@ -288,6 +301,20 @@ export default {
       type: String,
       default: null
     }
+  },
+  methods: {
+    playDing () {
+      require('@/assets/ding.mp3');
+      let audio = new Audio('./assets/ding.mp3');
+      audio.play();
+    }
+  },
+  watch: {
+    count (newValue, oldValue) {
+      if (this.ding && newValue > oldValue) {
+        this.playDing();
+      }
+    }
   }
 }
 </script>
@@ -304,5 +331,4 @@ export default {
     .odometer-inside
       display: grid
       grid-auto-flow: column
-
 </style>
