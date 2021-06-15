@@ -7,6 +7,9 @@
     <span v-if="count">
       &nbsp;&nbsp;&nbsp;&nbsp;:count="{{ count }}"<br>
     </span>
+    <span v-if="ding">
+      &nbsp;&nbsp;&nbsp;&nbsp;:ding="{{ ding }}"<br>
+    </span>
     <span v-if="upperLimit">
       &nbsp;&nbsp;&nbsp;&nbsp;upperLimit="{{ upperLimit }}"<br>
     </span>
@@ -56,6 +59,7 @@ export default {
   },
   props: [
     'count',
+    'ding',
     'upperLimit',
     'size',
     'counterLocation',
@@ -75,17 +79,17 @@ export default {
 }
 </script>
 <style lang="sass" scoped>
-    #sourceCode
-        padding: 0 15px
-        display: grid
-        align-content: center
-        justify-content: center
-        border-left: 1px solid #232323
-        background: #232323
-        color: #fff
-        font-size: 18px
-        &, span
-            font-family: monospace
-        .image
-            width: 30px
+#sourceCode
+  padding: 0 15px
+  display: grid
+  align-content: center
+  justify-content: center
+  border-left: 1px solid #232323
+  background: #232323
+  color: #fff
+  font-size: 18px
+  &, span
+    font-family: monospace
+    .image
+      width: 30px
 </style>

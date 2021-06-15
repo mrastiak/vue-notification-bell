@@ -6,42 +6,100 @@
     <div class="controls">
       <div class="input-container">
         <label for="size">Size</label>
-        <input type="range" min="30" max="500" v-model.number="size" id="size" class="slider">
+        <input
+          type="range"
+          min="30"
+          max="500"
+          v-model.number="size"
+          id="size"
+          class="slider"
+        >
       </div>
 
       <div class="input-container">
-        <input type="checkbox" v-model="customFontSize" id="customFontSize">
+        <input
+          type="checkbox"
+          v-model="customFontSize"
+          id="customFontSize"
+        >
         <label for="customFontSize">Custom Font Size</label>
       </div>
-      <div class="input-container" v-if="customFontSize">
+      <div
+        class="input-container"
+        v-if="customFontSize"
+      >
         <label for="fontSize">Font Size</label>
-        <input type="text" placeholder="e.g: 20px" v-model="fontSize" id="fontSize">
+        <input
+          type="text"
+          placeholder="e.g: 20px"
+          v-model="fontSize"
+          id="fontSize"
+        >
       </div>
 
       <div class="input-container">
-        <input type="checkbox" v-model="customCounterPadding" id="customCounterPadding">
+        <input
+          type="checkbox"
+          v-model="customCounterPadding"
+          id="customCounterPadding"
+        >
         <label for="customCounterPadding">Custom Counter Padding</label>
       </div>
-      <div class="input-container" v-if="customCounterPadding">
+      <div
+        class="input-container"
+        v-if="customCounterPadding"
+      >
         <label for="padding">Padding</label>
-        <input type="text" placeholder="e.g: 20px" v-model="counterPadding" id="padding">
+        <input
+          type="text"
+          placeholder="e.g: 20px"
+          v-model="counterPadding"
+          id="padding"
+        >
       </div>
 
       <div class="input-container">
-        <input type="checkbox" v-model="customLocation" id="customLocation">
+        <input
+          type="checkbox"
+          v-model="customLocation"
+          id="customLocation"
+        >
         <label for="customLocation">Custom Location</label>
       </div>
-      <div class="input-container" v-if="customLocation">
+      <div
+        class="input-container"
+        v-if="customLocation"
+      >
         <label for="top">Top</label>
-        <input type="text" placeholder="e.g: 20px" v-model="top" id="top">
+        <input
+          type="text"
+          placeholder="e.g: 20px"
+          v-model="top"
+          id="top"
+        >
       </div>
-      <div class="input-container" v-if="customLocation">
+      <div
+        class="input-container"
+        v-if="customLocation"
+      >
         <label for="left">Left</label>
-        <input type="text" placeholder="e.g: 20px" v-model="left" id="left">
+        <input
+          type="text"
+          placeholder="e.g: 20px"
+          v-model="left"
+          id="left"
+        >
       </div>
-      <div class="input-container" v-if="!customLocation">
+      <div
+        class="input-container"
+        v-if="!customLocation"
+      >
         <label for="counterLocation">Counter Location</label>
-        <select name="counterLocation" id="counterLocation" v-model="counterLocation">
+        <select
+          name="counterLocation"
+          id="counterLocation"
+          v-model="counterLocation"
+        >
           <option value="upperRight">Upper Right</option>
           <option value="right">Right</option>
           <option value="lowerRight">Lower Right</option>
@@ -55,19 +113,37 @@
       </div>
       <div class="input-container">
         <label for="notificationCount">Notification Count</label>
-        <input type="number" v-model.number="count" min="1" id="notificationCount">
+        <input
+          type="number"
+          v-model.number="count"
+          min="1"
+          id="notificationCount"
+        >
       </div>
       <div class="input-container">
         <label for="upperLimit">Notifications Upper Limit</label>
-        <input type="number" min="1" id="upperLimit" v-model.number="upperLimit">
+        <input
+          type="number"
+          min="1"
+          id="upperLimit"
+          v-model.number="upperLimit"
+        >
       </div>
       <div class="input-container">
         <label for="prefixPlus">Prefix Plus?</label>
-        <input type="checkbox" id="prefixPlus" v-model="prefixPlus">
+        <input
+          type="checkbox"
+          id="prefixPlus"
+          v-model="prefixPlus"
+        >
       </div>
       <div class="input-container">
         <label for="counterStyle">Counter Style</label>
-        <select name="counterStyle" id="counterStyle" v-model="counterStyle">
+        <select
+          name="counterStyle"
+          id="counterStyle"
+          v-model="counterStyle"
+        >
           <option value="roundRectangle">Round Rectangle</option>
           <option value="round">Round</option>
           <option value="rectangle">Rectangle</option>
@@ -75,61 +151,100 @@
       </div>
       <div class="input-container">
         <label for="counterBackgroundColor">Counter Background Color</label>
-        <input type="color" id="counterBackgroundColor" v-model="counterBackgroundColor">
+        <input
+          type="color"
+          id="counterBackgroundColor"
+          v-model="counterBackgroundColor"
+        >
       </div>
       <div class="input-container">
         <label for="counterTextColor">Counter Text Color</label>
-        <input type="color" id="counterTextColor" v-model="counterTextColor">
+        <input
+          type="color"
+          id="counterTextColor"
+          v-model="counterTextColor"
+        >
       </div>
       <div class="input-container">
         <label for="iconColor">Icon Color</label>
-        <input type="color" id="iconColor" v-model="iconColor">
+        <input
+          type="color"
+          id="iconColor"
+          v-model="iconColor"
+        >
       </div>
       <div class="input-container">
-        <input type="checkbox" v-model="animated" id="animated">
+        <input
+          type="checkbox"
+          v-model="ding"
+          id="ding"
+        >
+        <label for="ding">Play ding on new notification</label>
+      </div>
+      <div class="input-container">
+        <input
+          type="checkbox"
+          v-model="animated"
+          id="animated"
+        >
         <label for="animated">Animated</label>
       </div>
       <div class="docs">
-        <a href="https://github.com/Carrene/vue-notification-bell" target="_blank">Docs</a>
+        <a
+          href="https://github.com/Carrene/vue-notification-bell"
+          target="_blank"
+        >Docs</a>
       </div>
     </div>
-    <notification-bell class="bell"
-                       :size="size"
-                       :count="count"
-                       :upperLimit="upperLimit"
-                       :counter-location="counterLocation"
-                       :counterStyle="counterStyle"
-                       :counterBackgroundColor="counterBackgroundColor"
-                       :counterTextColor="counterTextColor"
-                       :iconColor="iconColor"
-                       :animated="animated"
-                       :top="top"
-                       :left="left"
-                       :prefixPlus="prefixPlus"
-                       :fontSize="fontSize"
-                       :counterPadding="counterPadding"
+    <notification-bell
+      class="bell"
+      :size="size"
+      :count="count"
+      :ding="ding"
+      :upperLimit="upperLimit"
+      :counter-location="counterLocation"
+      :counterStyle="counterStyle"
+      :counterBackgroundColor="counterBackgroundColor"
+      :counterTextColor="counterTextColor"
+      :iconColor="iconColor"
+      :animated="animated"
+      :top="top"
+      :left="left"
+      :prefixPlus="prefixPlus"
+      :fontSize="fontSize"
+      :counterPadding="counterPadding"
     />
     <source-code
-            :size="size"
-            :count="count"
-            :upperLimit="upperLimit"
-            :counter-location="counterLocation"
-            :counterStyle="counterStyle"
-            :counterBackgroundColor="counterBackgroundColor"
-            :counterTextColor="counterTextColor"
-            :iconColor="iconColor"
-            :animated="animated"
-            :top="top"
-            :left="left"
-            :prefixPlus="prefixPlus"
-            :fontSize="fontSize"
-            :counterPadding="counterPadding"
+      :size="size"
+      :count="count"
+      :ding="ding"
+      :upperLimit="upperLimit"
+      :counter-location="counterLocation"
+      :counterStyle="counterStyle"
+      :counterBackgroundColor="counterBackgroundColor"
+      :counterTextColor="counterTextColor"
+      :iconColor="iconColor"
+      :animated="animated"
+      :top="top"
+      :left="left"
+      :prefixPlus="prefixPlus"
+      :fontSize="fontSize"
+      :counterPadding="counterPadding"
     />
     <footer>
       <p>
-        Created by <a href="https://twitter.com/maryayi" target="_blank">@maryayi</a>,
-        <a href="https://github.com/mrastiak" target="_blank">@mrastiak</a> and
-        <a href="https://github.com/eghrarish" target="_blank">@eghrarish</a>
+        Created by <a
+          href="https://twitter.com/maryayi"
+          target="_blank"
+        >@maryayi</a>,
+        <a
+          href="https://github.com/mrastiak"
+          target="_blank"
+        >@mrastiak</a> and
+        <a
+          href="https://github.com/eghrarish"
+          target="_blank"
+        >@eghrarish</a>
       </p>
     </footer>
   </div>
@@ -149,6 +264,7 @@ export default {
       top: null,
       left: null,
       count: 2,
+      ding: false,
       upperLimit: 50,
       counterStyle: 'roundRectangle',
       counterBackgroundColor: '#FF0000',
@@ -186,10 +302,10 @@ export default {
 }
 </script>
 <style lang="sass">
-  *, button, input
-    margin: 0
-    padding: 0
-    font-family: sans-serif
+*, button, input
+  margin: 0
+  padding: 0
+  font-family: sans-serif
   body, html
     width: 100%
     height: 100%
