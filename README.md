@@ -73,6 +73,7 @@ export default {
 | `counterBackgroundColor` | background color of counter box                                                                                                                                                                                             | `red`                                                |
 | `counterTextColor`       | counter text color                                                                                                                                                                                                          | `white`                                              |
 | `animated`               | if true, counter increase/decrease by animation                                                                                                                                                                             | `false`                                              |
+| `ding`                   | if true, a ding sound is played on new notifications                                                                                                                                                                         | `false`                                             |
 | `prefixPlus`             | if true, upper limit plus sign is shown as a **prefix**, otherwise it is shown as a postfix                                                                                                                                 | `false`                                              |
 
 ## Contributing
