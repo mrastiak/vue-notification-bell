@@ -11,7 +11,7 @@
       &nbsp;&nbsp;&nbsp;&nbsp;:ding="{{ ding }}"<br>
     </span>
     <span v-if="upperLimit">
-      &nbsp;&nbsp;&nbsp;&nbsp;upperLimit="{{ upperLimit }}"<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;:upperLimit="{{ upperLimit }}"<br>
     </span>
     <span v-if="counterLocation && !top && !left">
       &nbsp;&nbsp;&nbsp;&nbsp;counterLocation="{{ counterLocation }}"<br>
