@@ -15,7 +15,7 @@
     "build": "./node_modules/@vue/cli-service/bin/vue-cli-service.js build --dest docs",
     "build-bundle": "./node_modules/@vue/cli-service/bin/vue-cli-service.js build --target lib --name NotificationBell ./src/build.js",
     "lint": "./node_modules/@vue/cli-service/bin/vue-cli-service.js lint",
-    "prepare": "npm run build-bundle"
+    "prepublish": "npm run build-bundle && npm run build"
   },
   "dependencies": {
     "odometer": "^0.4.8",
@@ -38,9 +38,9 @@
     "component",
     "notification"
   ],
-  "homepage": "https://github.com/Carrene/vue-notification-bell",
+  "homepage": "https://github.com/mrastiak/vue-notification-bell",
   "bugs": {
-    "url": "https://github.com/Carrene/vue-notification-bell/issues"
+    "url": "https://github.com/mrastiak/vue-notification-bell/issues"
   },
   "author": "Mahdi Aryayi <mahdiaryayi@gmail.com>",
   "contributors": [
