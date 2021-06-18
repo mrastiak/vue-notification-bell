@@ -1,7 +1,7 @@
 {
   "name": "vue-notification-bell",
   "description": "A Vue.js UI component for showing notifications",
-  "main": "./dist/NotificationBell.common.js",
+  "main": "./dist/NotificationBell.umd.min.js",
   "files": [
     "dist/*",
     "src/*",
