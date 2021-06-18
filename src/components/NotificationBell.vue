@@ -304,8 +304,8 @@ export default {
   },
   methods: {
     playDing () {
-      require('@/assets/ding.mp3');
-      let audio = new Audio('./assets/ding.mp3');
+      const sound = require('@/assets/ding.mp3');
+      let audio = new Audio(process.env.NODE_ENV === 'development' ? './assets/ding.mp3' : sound);
       audio.play();
     }
   },
