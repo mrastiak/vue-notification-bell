@@ -15,7 +15,7 @@
     "build": "./node_modules/@vue/cli-service/bin/vue-cli-service.js build --dest docs",
     "build-bundle": "./node_modules/@vue/cli-service/bin/vue-cli-service.js build --target lib --name NotificationBell ./src/build.js",
     "lint": "./node_modules/@vue/cli-service/bin/vue-cli-service.js lint",
-    "prepublish": "npm run build-bundle && npm run build"
+    "prepublish": "npm run build-bundle"
   },
   "dependencies": {
     "odometer": "^0.4.8",
