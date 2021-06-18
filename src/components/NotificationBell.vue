@@ -50,6 +50,7 @@
 <script>
 import VueOdometer from 'vue-odometer'
 import 'odometer/themes/odometer-theme-default.css'
+import ding from '../assets/ding-base64'
 
 export default {
   name: 'NotificationBell',
@@ -304,8 +305,7 @@ export default {
   },
   methods: {
     playDing () {
-      const sound = require('@/assets/ding.mp3');
-      let audio = new Audio(process.env.NODE_ENV === 'development' ? './assets/ding.mp3' : sound);
+      let audio = new Audio(ding);
       audio.play();
     }
   },

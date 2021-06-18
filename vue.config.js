@@ -25,14 +25,6 @@ module.exports = {
           'url-loader?name=assets/[name].[ext]'
         ]
       },
-      {
-        test: /\.mp3$/,
-        loader: 'file-loader',
-        options: {
-          limit: 10000,
-          name: 'assets/[name].[ext]',
-        }
-      },
       ]
     }
   },
