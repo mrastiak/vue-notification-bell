@@ -9,7 +9,7 @@
     "*.json",
     "*.js"
   ],
-  "version": "0.9.11",
+  "version": "0.9.12",
   "scripts": {
     "serve": "./node_modules/@vue/cli-service/bin/vue-cli-service.js serve",
     "build": "./node_modules/@vue/cli-service/bin/vue-cli-service.js build --dest docs",
