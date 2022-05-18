@@ -12,6 +12,10 @@
 
 A Vue UI component for showing notifications. [Demo Page](https://mrastiak.github.io/vue-notification-bell/)
 
+## New Vue 3 Version
+
+New version compatible with Vue 3. All the incompatible dependencies such as Odometer have been removed. The way of using the component NotificationBell remains unchanged.
+
 ## How To Install
 
 ```
