@@ -9,29 +9,23 @@
     "*.json",
     "*.js"
   ],
-  "version": "0.9.12",
+  "version": "0.9.13",
   "scripts": {
     "serve": "./node_modules/@vue/cli-service/bin/vue-cli-service.js serve",
     "build": "./node_modules/@vue/cli-service/bin/vue-cli-service.js build --dest docs",
     "build-bundle": "./node_modules/@vue/cli-service/bin/vue-cli-service.js build --target lib --name NotificationBell ./src/build.js",
-    "lint": "./node_modules/@vue/cli-service/bin/vue-cli-service.js lint",
-    "prepare": "husky install"
+    "lint": "./node_modules/@vue/cli-service/bin/vue-cli-service.js lint"
   },
   "dependencies": {
-    "odometer": "^0.4.8",
-    "vue": "^2.6.10",
-    "vue-odometer": "^1.0.2"
+    "@vue/cli-plugin-babel": "^5.0.4",
+    "@vue/cli-plugin-eslint": "^5.0.4",
+    "@vue/cli-service": "^5.0.4",
+    "@vue/compiler-sfc": "^3.2.33",
+    "sass": "^1.51.0",
+    "sass-loader": "^12.6.0",
+    "vue": "^3.2.33"
   },
-  "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.8.0",
-    "@vue/cli-plugin-eslint": "^3.8.0",
-    "@vue/cli-service": "^3.8.3",
-    "@vue/eslint-config-standard": "^4.0.0",
-    "node-sass": "^4.12.0",
-    "sass-loader": "^7.1.0",
-    "vue-template-compiler": "^2.6.10",
-    "husky": "^6.0.0"
-  },
+  "devDependencies": {},
   "keywords": [
     "vue",
     "vue.js",

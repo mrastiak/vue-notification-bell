@@ -32,11 +32,6 @@
         <div class="counter-wrapper">
           <div v-if="count > upperLimit && prefixPlus">+</div>
           <span v-if="!animated">{{ computedCounter }}</span>
-          <vue-odometer
-            v-else
-            class="iOdometer"
-            :value="computedCounter"
-          />
           <div v-if="count > upperLimit && !prefixPlus">+</div>
         </div>
       </div>
@@ -45,13 +40,10 @@
 </template>
 
 <script>
-import VueOdometer from 'vue-odometer'
-import 'odometer/themes/odometer-theme-default.css'
 import ding from '../assets/ding-base64'
-
 export default {
   name: 'NotificationBell',
-  computed: {
+  computed : {
     preDefinedNotificationCounterLocation () {
       switch (this.counterLocation) {
         case 'upperRight':
@@ -169,14 +161,12 @@ export default {
       return this.count <= this.upperLimit ? Math.floor(this.count) : Math.floor(this.upperLimit)
     },
     resolvedIcon () {
-      if (this.icon) {
         if (this.count > 0) {
           return this.icon
         } else if (this.disabledIcon) {
           return this.disabledIcon
         }
-        return this.icon
-      }
+        return this.disabledIcon
     },
     notificationCounterLocation () {
       if (this.top || this.left) {
@@ -210,9 +200,6 @@ export default {
         }
       }
     }
-  },
-  components: {
-    VueOdometer
   },
   props: {
     count: {
@@ -300,7 +287,7 @@ export default {
       default: null
     }
   },
-  methods: {
+   methods: {
     playDing () {
       let audio = new Audio(ding);
       audio.play();
@@ -325,7 +312,4 @@ export default {
   .counter-wrapper
     display: grid
     grid-auto-flow: column
-    .odometer-inside
-      display: grid
-      grid-auto-flow: column
 </style>
