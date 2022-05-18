@@ -245,7 +245,7 @@ export default {
     },
     icon: {
       type: String,
-      default: null
+      default: null // require('@/assets/notification-dark.svg')
     },
     disabledIcon: {
       type: String,
